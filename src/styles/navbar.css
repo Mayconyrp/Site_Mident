@@ -1,0 +1,82 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1A1A1A;
+}
+
+/* Logo */
+.navbar-logo img {
+    height: 40px;
+    width: auto;
+    /* Mantém a proporção da imagem */
+}
+
+/* Links container */
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    /* Transição suave para o efeito de hover */
+}
+
+/* Hover effect for links */
+.navbar-links a:hover {
+    color: #C4837A;
+    /* Cor de hover */
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    transition: filter 0.3s ease;
+    /* Transição suave para o efeito de hover */
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+/* Hover effect for hamburger menu */
+.hamburger:hover .line {
+    filter: brightness(0) saturate(100%) invert(67%) sepia(45%) saturate(392%) hue-rotate(315deg) brightness(90%) contrast(91%);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #1A1A1A;
+        width: 100%;
+        max-width: 200px;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar-links.active {
+        transform: translateX(0);
+    }
+
+    .hamburger {    
+        display: flex;
+    }
+}
